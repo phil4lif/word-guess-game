@@ -11,6 +11,13 @@ var winsText = document.getElementById("win-number");
 var lossesText = document.getElementById("loss-number");
 var guessesLeftText = document.getElementById("guessesleftnumber");
 
+//a new game function to be called after the game is won or lost
+var newGame = function(){
+    guessedSoFar = [""];
+    guessesLeft = 12;
+    word();
+    soFarText();
+    }
 //Makes an array for the random word that the computer will choose
 var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "mike", "bob"];
 
