@@ -21,3 +21,13 @@ console.log(blankSpaces);
 // var gameBoard = document.getElementById("gameboard")
 
 document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
+
+//writes the code for the users letter guesses and checks them for a match in the Computers word choice.
+
+document.onkeyup = function(event) {
+    var userGuess = event.key;
+
+    if (guessesLeft > 0) {
+        if (userGuess === word.)
+    }
+}
