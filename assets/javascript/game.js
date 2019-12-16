@@ -34,6 +34,7 @@ document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
 document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
+
     guessedSoFar.push(userGuess);
 //makes  a function to check if the guess is in fact in the string and returns a boolean
 function isMatch() {
@@ -43,13 +44,14 @@ function isMatch() {
 
 if (match === true) {
     document.getElementById("gameboard").innerHTML="" + blankSpaces.join(userGuess);
-    
+    guessesLeft--;
 }
 else {
     guessesLeft--;
 }
 //updates the displayed values
 guessedSoFarText.textContent = guessedSoFar;
+guessesLeftText.textContent = guessesLeft;
 }
 
 isMatch();
