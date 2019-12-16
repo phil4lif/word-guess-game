@@ -7,7 +7,7 @@ var blankSpaces = [""];
 
 
 //Makes an array for the random word that the computer will choose
-var randomWord = ["Dale", "Andy", "Laura", "Audrey", "Ben", "Harry", "Pete", "Donna", "Leland", "James", "Bobby", "Mike", "Bob"];
+var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "mike", "bob"];
 
 //Computer chooses from the randomword array
 var word = randomWord[Math.floor(Math.random() * randomWord.length)];
@@ -21,13 +21,27 @@ console.log(blankSpaces);
 // var gameBoard = document.getElementById("gameboard")
 
 document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
+//makes  a function to check if the guess is in fact in the string and returns a boolean
 
-//writes the code for the users letter guesses and checks them for a match in the Computers word choice.
 
+
+//writes the code for the users letter guess
 document.onkeyup = function(event) {
     var userGuess = event.key;
+    console.log(userGuess);
 
-    if (guessesLeft > 0) {
-        if (userGuess === word.)
-    }
+
+function isMatch() {
+    var match = word.includes(userGuess);
+    console.log(match);
+    
+if (match === true) {
+    document.getElementById("gameboard").innerHTML="" + blankSpaces.join(userGuess);
+}
+else {
+    guessesLeft--;
+}
+}
+
+isMatch();
 }
