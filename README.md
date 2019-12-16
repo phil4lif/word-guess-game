@@ -1,2 +1,5 @@
 # word-guess-game
-Recommended JavaScript assignment for U of A Full Stack Boot Camp
+
+This is a hangman game with a Twin Peaks theme.
+
+
