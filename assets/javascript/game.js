@@ -13,4 +13,11 @@ var randomWord = ["Dale", "Andy", "Laura", "Audrey", "Ben", "Harry", "Pete", "Do
 var word = randomWord[Math.floor(Math.random() * randomWord.length)];
 console.log(word);
 
+for (var i = 0; i < word.length; i++) {
+    blankSpaces[i] = "_"
+}
+console.log(blankSpaces);
 
+// var gameBoard = document.getElementById("gameboard")
+
+document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
