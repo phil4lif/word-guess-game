@@ -34,18 +34,22 @@ document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
 document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
-
+    guessedSoFar.push(userGuess);
 //makes  a function to check if the guess is in fact in the string and returns a boolean
 function isMatch() {
     var match = word.includes(userGuess);
     console.log(match);
     
+
 if (match === true) {
     document.getElementById("gameboard").innerHTML="" + blankSpaces.join(userGuess);
+    
 }
 else {
     guessesLeft--;
 }
+//updates the displayed values
+guessedSoFarText.textContent = guessedSoFar;
 }
 
 isMatch();
