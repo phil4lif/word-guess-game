@@ -19,7 +19,7 @@ var newGame = function(){
     soFarText();
     }
 //Makes an array for the random word that the computer will choose
-var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "mike", "bob"];
+var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "shelly", "mike", "bob"];
 
 //Computer chooses from the randomword array
 var word = randomWord[Math.floor(Math.random() * randomWord.length)];
