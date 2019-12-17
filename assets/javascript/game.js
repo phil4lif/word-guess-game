@@ -39,27 +39,43 @@ document.getElementById("gameboard").innerHTML="" + blankSpaces.join(" ");
 
 //writes the code for the users letter guess
 document.onkeyup = function(event) {
+    if (guessesLeft > 0){
     var userGuess = event.key;
     console.log(userGuess);
-
+    guessesLeft--;
     guessedSoFar.push(userGuess);
+
+    var isGuessWrong = true;
+
+    for (var i = 0; i < word.length; i++) {
+        if (userGuess === word[i]) {
+            isGuessWrong = false;
+            blankSpaces[i] = userGuess;
+            document.getElementById("gameboard").innerHTML = " " + blankSpaces.join(" ");
+        }
+    }
+}
+if (guessesLeft === 0){
+    losses++;
+    alert("I'm sorry, you've been hanged!");
+}
 //makes  a function to check if the guess is in fact in the string and returns a boolean
-function isMatch() {
-    var match = word.includes(userGuess);
-    console.log(match);
+// function isMatch() {
+//     var match = word.includes(userGuess);
+//     console.log(match);
     
 
-if (match === true) {
-    document.getElementById("gameboard").innerHTML="" + blankSpaces.join(userGuess);
-    guessesLeft--;
-}
-else {
-    guessesLeft--;
-}
+// if (match === true) {
+//     document.getElementById("gameboard").innerHTML="" + blankSpaces.join(userGuess);
+//     guessesLeft--;
+// }
+// else {
+//     guessesLeft--;
+// }
 //updates the displayed values
 guessedSoFarText.textContent = guessedSoFar;
 guessesLeftText.textContent = guessesLeft;
 }
 
-isMatch();
-}
+// isMatch();
+// }
