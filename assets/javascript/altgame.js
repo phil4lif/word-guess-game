@@ -4,7 +4,7 @@ var losses = 0;
 var guessesLeft = 12;
 var guessedSoFar = [""];
 var blankSpaces = [""];
-var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "dona", "lelad", "james", "bobby", "shelly", "mike", "bob"];
+var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "shelly", "mike", "bob"];
 var word = "";
 
 
@@ -33,6 +33,7 @@ generateWord = function () {
 var newGame = function () {
     guessedSoFar = [""];
     guessesLeft = 12;
+    document.getElementById("guessedsofartext").innerHTML = " " + guessedSoFar;
     guessesLeftText.textContent=guessesLeft;
 }
 
@@ -47,6 +48,7 @@ document.onclick = function () {
             var userGuess = event.key;
             guessesLeft--;
             guessedSoFar.push(userGuess);
+            document.getElementById("guessedsofartext").innerHTML = " " + guessedSoFar.join(" ");
             
             // guessedSoFarText.textContent = guessedSoFar;
             guessesLeftText.textContent = guessesLeft;
