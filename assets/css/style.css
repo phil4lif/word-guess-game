@@ -18,6 +18,7 @@ body {
     text-align: center;
     border-bottom: solid 2px black;
 }
+
 #start-button {
     color:black;
     background: papayawhip 0.5;
@@ -32,7 +33,6 @@ body {
     text-align: center;
     margin: auto;
     padding-top: 25px;
-
 }
 
 #gameboard {
