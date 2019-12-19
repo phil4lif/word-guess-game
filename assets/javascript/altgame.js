@@ -5,25 +5,26 @@ var guessesLeft = 12;
 var guessedSoFar = [""];
 var blankSpaces = [""];
 var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "dona", "lelad", "james", "bobby", "shelly", "mike", "bob"];
+var word = "";
 
 
 //creates variables that reference the html to display the text and stats
-var guessedSoFarText = document.getElementById("guesssofartext");
+var guessedSoFarText = document.getElementById("guesssedsofartext");
 var winsText = document.getElementById("win-number");
 var lossesText = document.getElementById("loss-number");
-var guessLeftText = document.getElementById("guessesleftnumber");
+var guessesLeftText = document.getElementById("guessesleftnumber");
 
 //computer word generator
 generateWord = function () {
-    var word = randomWord[Math.floor(Math.random() * randomWord.length)];
-    console.log(word);
-    
+    word = randomWord[Math.floor(Math.random() * randomWord.length)];
+    // return word;
+
+
     blankSpaces = [""];
-//for loop that calculates how many blank spaces to print to the doc    
+    //for loop that calculates how many blank spaces to print to the doc    
     for (var i = 0; i < word.length; i++) {
         blankSpaces[i] = "_"
     }
-    console.log(blankSpaces);
 
     document.getElementById("gameboard").innerHTML = "" + blankSpaces.join(" ");
 };
@@ -32,7 +33,50 @@ generateWord = function () {
 var newGame = function () {
     guessedSoFar = [""];
     guessesLeft = 12;
-    
+    guessesLeftText.textContent=guessesLeft;
+}
+
+//clicks the screen to start the game
+document.onclick = function () {
+    newGame();
+    generateWord();
+
+    //userguess function
+    document.onkeyup = function (event) {
+        if (guessesLeft > 0) {
+            var userGuess = event.key;
+            guessesLeft--;
+            guessedSoFar.push(userGuess);
+            
+            // guessedSoFarText.textContent = guessedSoFar;
+            guessesLeftText.textContent = guessesLeft;
+
+
+            //checks if guesses are correct and displays them in the gmeboard
+            var isGuessWrong = true;
+
+            for (var j = 0; j < word.length; j++) {
+                if (userGuess === word[j]) {
+                    isGuessWrong = false;
+                    blankSpaces[j] = userGuess;
+                    document.getElementById("gameboard").innerHTML = " " + blankSpaces.join(" ");
+                }
+            }
+        }
+
+        //ends game in the event of a loss
+        if (guessesLeft === 0) {
+            losses++;
+            lossesText.texContent = losses;
+            alert("I'm sorry, the hangman is coming for you! Click Ok to try again");
+            newGame();
+            generateWord();
+
+        }
+    }
+
+
+
 }
 
 
@@ -40,15 +84,8 @@ var newGame = function () {
 
 
 
-//userguess section
 
 
-
-//checks if guesses are correct and displays them in the gmeboard
-
-
-
-//ends game in the event of a loss
 
 
 
