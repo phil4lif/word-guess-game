@@ -64,7 +64,6 @@ document.getElementById("start-button").onclick = function () {
                     blankSpaces[j] = userGuess;
                     document.getElementById("gameboard").innerHTML = " " + blankSpaces.join(" ");
                 }
-
             }
         }
 
@@ -79,16 +78,16 @@ document.getElementById("start-button").onclick = function () {
 
         //code here what happens if the user guesses all the letters correctly before guesses left = 0
 
- if (wordLength === 0) {
-        document.getElementById("gameboard").innerHTML = word;
-        wins++;
-        winsText.textContent = wins;
-        alert("Great work, You've solved the puzzle the correct answer is " + word +". click ok to play again!")
-        // newGame();
-        // generateWord();
+        if (wordLength === 0) {
+            document.getElementById("gameboard").innerHTML = word;
+            wins++;
+            winsText.textContent = wins;
+            alert("Great work, You've solved the puzzle the correct answer is " + word + ". click ok to play again!")
+            newGame();
+            generateWord();
+        }
     }
-    }
-   }
+}
 
 
 
