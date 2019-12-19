@@ -87,25 +87,9 @@ document.getElementById("start-button").onclick = function () {
         generateWord();
     }
     }
-   
-
-
-}
+   }
 
 
 
 
-
-
-
-
-
-
-
-
-//ends game in the event of a win
-
-
-
-//calls the function to start the game again
 

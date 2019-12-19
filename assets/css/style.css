@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    color: rgb(52, 59, 37);
+    background-image: url(../images/TwinPeaks_openingshotcredits.jpg);
+    font-size:32px;
+    font-weight: 700px;
+}
+
+#masthead {
+    color:black;
+    background-color: papayawhip;
+    font-weight: 700px;
+    height: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: solid 2px black;
+}
+#start-button {
+    color:black;
+    background: papayawhip 0.5;
+    font-size: 36px;
+    height: 40px;
+}
+
+.content {
+    background-color: rgba(255,239,213, 0.3);
+     width: 600px;
+    height: 230px;
+    text-align: center;
+    margin: auto;
+    padding-top: 25px;
+
+}
+
+#gameboard {
+    background-color:papayawhip;
+    height:100px;
+    width: 200px;
+    position: relative;
+    bottom: -200px;
+    left: 200px;
+    padding-top: 40px;
+}
