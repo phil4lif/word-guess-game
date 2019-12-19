@@ -19,6 +19,7 @@ generateWord = function () {
     word = randomWord[Math.floor(Math.random() * randomWord.length)];
     // return word;
     wordLength = word.length;
+    //selects the photo that matches the chosen word that will be displayed when the game is won
 
     blankSpaces = [""];
     //for loop that calculates how many blank spaces to print to the doc    
@@ -82,6 +83,7 @@ document.getElementById("start-button").onclick = function () {
             document.getElementById("gameboard").innerHTML = word;
             wins++;
             winsText.textContent = wins;
+            document.getElementById("#photo").style.visibility = "visible";
             alert("Great work, You've solved the puzzle the correct answer is " + word + ". click ok to play again!")
             newGame();
             generateWord();
