@@ -6,7 +6,7 @@ var guessedSoFar = [""];
 var blankSpaces = [""];
 var randomWord = ["dale", "andy", "laura", "audrey", "ben", "harry", "pete", "donna", "leland", "james", "bobby", "shelly", "mike", "bob"];
 var word = "";
-
+var wordLength = word.length;
 
 //creates variables that reference the html to display the text and stats
 var guessedSoFarText = document.getElementById("guesssedsofartext");
@@ -18,7 +18,7 @@ var guessesLeftText = document.getElementById("guessesleftnumber");
 generateWord = function () {
     word = randomWord[Math.floor(Math.random() * randomWord.length)];
     // return word;
-
+    wordLength = word.length;
 
     blankSpaces = [""];
     //for loop that calculates how many blank spaces to print to the doc    
@@ -34,11 +34,11 @@ var newGame = function () {
     guessedSoFar = [""];
     guessesLeft = 12;
     document.getElementById("guessedsofartext").innerHTML = " " + guessedSoFar;
-    guessesLeftText.textContent=guessesLeft;
+    guessesLeftText.textContent = guessesLeft;
 }
 
 //clicks the screen to start the game
-document.onclick = function () {
+document.getElementById("start-button").onclick = function () {
     newGame();
     generateWord();
 
@@ -49,20 +49,22 @@ document.onclick = function () {
             guessesLeft--;
             guessedSoFar.push(userGuess);
             document.getElementById("guessedsofartext").innerHTML = " " + guessedSoFar.join(" ");
-            
+
             // guessedSoFarText.textContent = guessedSoFar;
             guessesLeftText.textContent = guessesLeft;
 
 
-            //checks if guesses are correct and displays them in the gmeboard
+            //checks if guesses are correct and displays them in the gameboard
             var isGuessWrong = true;
 
             for (var j = 0; j < word.length; j++) {
                 if (userGuess === word[j]) {
+                    wordLength--;
                     isGuessWrong = false;
                     blankSpaces[j] = userGuess;
                     document.getElementById("gameboard").innerHTML = " " + blankSpaces.join(" ");
                 }
+
             }
         }
 
@@ -73,13 +75,23 @@ document.onclick = function () {
             alert("I'm sorry, the hangman is coming for you! Click Ok to try again");
             newGame();
             generateWord();
-
         }
-    }
 
+        //code here what happens if the user guesses all the letters correctly before guesses left = 0
+
+ if (wordLength === 0) {
+        wins++;
+        winsText.textContent = wins;
+        alert("Great work, You've solved the puzzle the correct answer is " + word +". click ok to play again!")
+        newGame();
+        generateWord();
+    }
+    }
+   
 
 
 }
+
 
 
 
