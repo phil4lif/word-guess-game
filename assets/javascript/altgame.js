@@ -20,7 +20,9 @@ generateWord = function () {
     // return word;
     wordLength = word.length;
     //selects the photo that matches the chosen word that will be displayed when the game is won
-
+    // if (word="dale"){
+    //     document.getElementById("#photo").innerHTML="<img src=\"../images/dale.jpg\">";
+    // }
     blankSpaces = [""];
     //for loop that calculates how many blank spaces to print to the doc    
     for (var i = 0; i < word.length; i++) {
@@ -83,7 +85,7 @@ document.getElementById("start-button").onclick = function () {
             document.getElementById("gameboard").innerHTML = word;
             wins++;
             winsText.textContent = wins;
-            document.getElementById("#photo").style.visibility = "visible";
+            // document.getElementById("#photo").style.visibility = "visible";
             alert("Great work, You've solved the puzzle the correct answer is " + word + ". click ok to play again!")
             newGame();
             generateWord();

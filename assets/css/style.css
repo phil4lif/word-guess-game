@@ -14,7 +14,7 @@ h2 {
 }
 #masthead {
     color:black;
-    background-color: papayawhip;
+    background-color: rgba(255,239,213, 0.9);
     font-weight: 700px;
     height: 90px;
     margin-bottom: 10px;
@@ -40,9 +40,11 @@ h2 {
 
 #photo {
     visibility:none;
+    height: 600px;
+    width: 600px;
 }
 #gameboard {
-    background-color:papayawhip;
+    background-color: rgba(255,239,213, 0.7);
     height:100px;
     width: 200px;
     position: relative;
